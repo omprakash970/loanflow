@@ -26,6 +26,9 @@ import LoansOverview from "../features/admin/LoansOverview";
 
 // Analyst features
 import RiskReports from "../features/analyst/RiskReports";
+import Analytics from "../features/analyst/Analytics";
+import Trends from "../features/analyst/Trends";
+import Exports from "../features/analyst/Exports";
 
 function RoleDashboard() {
   const { user } = useAuth();
@@ -129,6 +132,30 @@ export default function AppRoutes() {
           element={
             <ProtectedRoute allowedRoles={["ANALYST"]}>
               <RiskReports />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/app/analytics"
+          element={
+            <ProtectedRoute allowedRoles={["ANALYST"]}>
+              <Analytics />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/app/trends"
+          element={
+            <ProtectedRoute allowedRoles={["ANALYST"]}>
+              <Trends />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/app/exports"
+          element={
+            <ProtectedRoute allowedRoles={["ANALYST"]}>
+              <Exports />
             </ProtectedRoute>
           }
         />

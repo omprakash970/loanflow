@@ -20,7 +20,6 @@ export default function DataTable({
   filterKey,
   filterOptions = [],
   pageSize = ROWS_PER_PAGE,
-  accent = "#2dd4bf",
 }) {
   const [page, setPage] = useState(1);
   const [filter, setFilter] = useState("All");
