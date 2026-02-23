@@ -15,14 +15,19 @@ import AnalystDashboard from "../features/analyst/AnalystDashboard";
 import ApplyLoan from "../features/borrower/ApplyLoan";
 import MyLoans from "../features/borrower/MyLoans";
 import EmiSchedule from "../features/borrower/EmiSchedule";
+import Profile from "../features/borrower/Profile";
 
 // Lender features
 import CreateLoan from "../features/lender/CreateLoan";
 import ActiveLoans from "../features/lender/ActiveLoans";
 import Borrowers from "../features/lender/Borrowers";
+import Payments from "../features/lender/Payments";
 
 // Admin features
 import LoansOverview from "../features/admin/LoansOverview";
+import Users from "../features/admin/Users";
+import SecurityLogs from "../features/admin/SecurityLogs";
+import Settings from "../features/admin/Settings";
 
 // Analyst features
 import RiskReports from "../features/analyst/RiskReports";
@@ -89,6 +94,14 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/app/profile"
+          element={
+            <ProtectedRoute allowedRoles={["BORROWER"]}>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Lender routes */}
         <Route
@@ -115,6 +128,14 @@ export default function AppRoutes() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/app/payments"
+          element={
+            <ProtectedRoute allowedRoles={["LENDER"]}>
+              <Payments />
+            </ProtectedRoute>
+          }
+        />
 
         {/* Admin routes */}
         <Route
@@ -122,6 +143,30 @@ export default function AppRoutes() {
           element={
             <ProtectedRoute allowedRoles={["ADMIN"]}>
               <LoansOverview />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/app/users"
+          element={
+            <ProtectedRoute allowedRoles={["ADMIN"]}>
+              <Users />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/app/security"
+          element={
+            <ProtectedRoute allowedRoles={["ADMIN"]}>
+              <SecurityLogs />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/app/settings"
+          element={
+            <ProtectedRoute allowedRoles={["ADMIN"]}>
+              <Settings />
             </ProtectedRoute>
           }
         />

@@ -379,13 +379,13 @@ export default function Landing() {
               <div className="lf-badge">Full Stack Application Development</div>
 
               <h1 className="lf-title">
-                Loan Management<br />
-                <span className="teal">Reimagined.</span>
+                Loan
+                <span className="teal">Flow</span>
               </h1>
 
               <p className="lf-sub">
                 A full-stack platform managing loan operations across multiple user roles —
-                built with React, Tailwind CSS, and React Router.
+               easing the work of Stake Holders
               </p>
 
               {/* Feature grid */}
